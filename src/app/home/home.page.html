@@ -2,28 +2,24 @@
   <ion-header [translucent]="true">
     <ion-toolbar>
 
-      <ion-title>
-        Lista de contatos
-      </ion-title>
+      <div style="margin: auto;">
 
-         <div>
-            <ion-buttons slot="end">
-              <ion-button routerLink="/cadastro">
-                <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
-              </ion-button>
-                <ion-button>
-                  <ion-searchbar placeholder="pesquisar..."
-                                  [(ngModel)]="queryText"
-                                  showCancelButton="focus"
-                                  animated>
-                  </ion-searchbar>
-
-              </ion-button>
-
-            </ion-buttons>
+          <ion-buttons slot="start">
+                <ion-searchbar placeholder="pesquisar..."
+                                [(ngModel)]="queryText"
+                                showCancelButton="focus"
+                                animated>
+                </ion-searchbar>
+                <ion-button routerLink="/cadastro">
+                  <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+                </ion-button>
+                <ion-button (click)="sort()">
+                      ↑Nome
+                  </ion-button>
+          </ion-buttons>
         </div>
     </ion-toolbar>
-    <button (click)="sort()">Nome</button>
+
   </ion-header>
 
 
