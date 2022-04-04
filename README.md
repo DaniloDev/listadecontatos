@@ -24,15 +24,21 @@ Essa aplicação foi feita para ser avaliado no desafio do link → https://gith
 
 ### Abaixo alguns gifs e link para um video da aplicação funcionando
 
-T#### <i class="icon-file"></i> Telas
 <table>
 <tbody>
 <tr>
-  <th>Detalhes</th>
+  <th>Telas</th>
 </tr>
 <tr>
-<td><img src="https://github.com/myfreecomm/desafio-mobile-android/blob/master/screens/01-list-parentchild.gif?raw=true" height="650" width="1060" style="max-width:100%;">
+<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif1.gif?raw=true" height="650" width="1060" style="max-width:100%;">
 </td>
+<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif2.gif?raw=true" height="650" width="1060" style="max-width:100%;">
+</td>
+<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif3.gif?raw=true" height="650" width="1060" style="max-width:100%;">
+</td>
+<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif4.gif?raw=true" height="650" width="1060" style="max-width:100%;">
+</td>
+
 </tr>
 </tbody>
 </table>
