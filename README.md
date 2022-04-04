@@ -27,7 +27,10 @@ Essa aplicação foi feita para ser avaliado no desafio do link → https://gith
 <table>
 <tbody>
 <tr>
-  <th>Telas</th>
+  <th>Gif1</th>
+  <th>Gif2</th>
+  <th>Gif3</th>
+  <th>Gif4</th>
 </tr>
 <tr>
 <td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif1.gif?raw=true" height="650" width="1060" style="max-width:100%;">
