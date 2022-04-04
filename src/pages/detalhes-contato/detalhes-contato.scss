@@ -1,0 +1,88 @@
+.image-div {
+    padding: 20px 28px 0 28px;
+    text-align: center;
+    img {
+      width: 70%;
+      max-width: 70%;
+      border-radius: 50%;
+    }
+    .spinner {
+      margin: 0 0 6vh 0;
+    }
+  }
+
+  .text-div {
+    padding: 10px 24px 0 24px;
+
+    h3 {
+      color:black;
+      font-weight: normal;
+      margin-bottom: 0;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    span.title{
+      color:black;
+      font-weight: italic !important;
+      margin-bottom: 0;
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+  .corpo {
+    // text-align: center;
+    padding: 0;
+    p {
+      color: darkGray;
+    }
+  }
+  .link {
+    p {
+      width: 100%;
+      text-decoration: underline;
+    }
+    margin-bottom: 20px;
+  }
+  .preco-col {
+    text-align: right;
+    h4 {
+      color: darkGray !important;
+      font-size: 24px !important;
+      font-weight: bold !important;
+      margin-top: 4px;
+      span {
+        font-size: 14px !important;
+      }
+    }
+    h5 {
+      color: darkGray !important;
+      margin-bottom: 0;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  .validade {
+		p {
+			font-size: 1.2rem;
+			// margin-top: 0px;
+		}
+
+	}
+
+	.share {
+
+    button {
+			margin: 0 0 0 4.2vh;
+			padding-right: 0px;
+			padding-left: 0px;
+
+      ion-icon {
+        padding: 0 0 0 1vh;
+			}
+
+    }
+
+	}
+

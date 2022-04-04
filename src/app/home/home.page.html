@@ -1,20 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+
+      <ion-title>
+        Lista de contatos
+      </ion-title>
+
+         <div>
+            <ion-buttons slot="end">
+              <ion-button routerLink="/cadastro">
+                <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+              </ion-button>
+                <ion-button>
+                  <ion-searchbar placeholder="pesquisar..."
+                                  [(ngModel)]="queryText"
+                                  showCancelButton="focus"
+                                  animated>
+                  </ion-searchbar>
+
+              </ion-button>
+
+            </ion-buttons>
+        </div>
     </ion-toolbar>
+    <button (click)="sort()">Nome</button>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col col-12 col-sm-9 col-md-7 col-lg-5>
+
+
+
+          <div *ngIf="contato">
+
+            <contato-card
+              *ngFor="let contato of contato | filter:queryText | sort: {property: column, order: order}"
+              [contato]="contato"
+            ></contato-card>
+          </div>
+          <div *ngIf="contato.length == 0">
+            <small class="text-center"><b>Seus contatos aparecerão aqui</b></small>
+          </div>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

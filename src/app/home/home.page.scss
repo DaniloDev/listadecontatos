@@ -1,27 +1,107 @@
-#container {
-  text-align: center;
+ .icon-div {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 3.5em;
+    p {
+      font-size: 14px;
+      margin-top: 5px;
+      color: darkGray;
+    }
+  }
+  .contatos {
+    padding: 0 8px;
+  }
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  .card-list {
+    .label-md {
+      margin: 0;
+    }
+  }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  .card-corpo {
+    h3 {
+      color: darkGray;
+      font-size: 2rem;
+    }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+    p {
+      color:darkGray;
+      font-size: 16px;
+    }
+  }
 
-  color: #8c8c8c;
+  .contato-card-class {
+    padding: 0;
+    max-height: 180px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .space {
+      margin-bottom: 10px !important;
+    }
+    .button-row {
+      position: absolute;
+      bottom: 45px;
+      width: 100%;
+      p {
+        text-align: right;
+        width: 80%;
+        font-size: 12px;
+        color: darkGray;
+      }
+    }
 
-  margin: 0;
-}
+    .button-row-noimage {
+      width: 100%;
+      margin-bottom: -15px;
+      margin-left: 10px;
+      p {
+        text-align: right;
+        width: 100%;
+        font-size: 12px;
+        color: darkGray;
+      }
+    }
 
-#container a {
-  text-decoration: none;
-}
+    .desc-col {
+      padding: 24px;
+    }
+
+    .img-col {
+      padding: 0px;
+      img {
+        object-fit: cover;
+        height: 220px;
+			}
+			.spinner {
+				margin: 12vh 0 0 11vh !important;
+			}
+    }
+
+    ion-card-content {
+      padding: 0 !important;
+      ion-card-title {
+        color: darkGray !important;
+        font-size: 1.8rem !important;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      p {
+        color: darkGray !important;
+        font-size: 1.2rem;
+      }
+      h4 {
+        color: darkGray!important;
+        font-size: 1.8rem !important;
+        font-weight: bold !important;
+        span {
+          font-size: 14px !important;
+        }
+      }
+      h5 {
+        color: darkGray!important;
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }

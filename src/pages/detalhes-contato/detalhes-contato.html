@@ -1,0 +1,50 @@
+<ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+
+      <ion-title>
+        Detalhes do contato
+      </ion-title>
+         <div>
+            <ion-fab vertical="center" horizontal="end" slot="fixed">
+              <ion-fab-button (click)="closeModal()" class="ion-padding">
+                <ion-icon name="close"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+        </div>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-row justify-content-center>
+    <ion-col col-12 col-sm-9 col-md-7 col-lg-5>
+      <div class="image-div" *ngIf="cont.photo">
+        <img
+          [src]="cont.photo"
+          onError="this.src='./assets/imgs/user.png';"
+          (load)="imgLoaded = true"
+          [hidden]="!imgLoaded"
+        />
+        <ion-spinner color="primary" *ngIf="!imgLoaded"></ion-spinner>
+      </div>
+
+
+      <div class="text-div">
+        <ion-grid>
+          <ion-row align-items-center>
+            <ion-col>
+
+              <h3 class="strong"><span class="title">Nome:</span> {{ cont.nome }} <span>{{ cont.sobreNome }}</span></h3>
+              <h3><span class="title">Telefone:</span>{{ cont.telefone }}</h3>
+              <a href="malito:{{ cont.email }}" class="small"><span class="title">Email: </span>{{ cont.email }}</a>
+              <h3 class="small"><span class="title">Anotação: </span>{{ cont.anotacao }}</h3>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+        <br />
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>
+

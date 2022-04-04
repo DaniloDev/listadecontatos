@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Novo Contato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formCadastro">
+      <div class="container">
+        <div class="outer"
+          [ngStyle]="{'background-image': 'url(' + photoPreview + ')'}">
+            <div class="inner" (click)="openOptionSelection()">
+               <ion-icon name="camera" class="camera-icon"></ion-icon>
+            </div>
+         </div>
+      </div>
+
+      <ion-item class="addphoto">
+        Adicionar foto
+      </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input formControlName="nome"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.nome">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('nome').hasError(erro.tipo) && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Sobre Nome</ion-label>
+      <ion-input formControlName="sobreNome"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.sobreNome">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('sobreNome').hasError(erro.tipo) && (formCadastro.get('sobreNome').dirty || formCadastro.get('sobreNome').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.email">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input
+          formControlName="telefone"
+          type="tel"
+          phone
+          (rawChange)="rawPhone = $event"
+          maxlength="15"
+          ></ion-input>
+      <ng-container *ngFor="let erro of mensagens.telefone">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('telefone').hasError(erro.tipo) && (formCadastro.get('telefone').dirty || formCadastro.get('telefone').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Anotação</ion-label>
+      <ion-textarea formControlName="anotacao"></ion-textarea>
+      <ng-container *ngFor="let erro of mensagens.anotacao">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('anotacao').hasError(erro.tipo) && (formCadastro.get('anotacao').dirty || formCadastro.get('anotacao').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    <ion-button expand="block" (click)="addContato()">SALVAR</ion-button>
+  </form>
+
+</ion-content>
