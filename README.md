@@ -1,8 +1,6 @@
-# Mobile Challenge Hausenn
-
 ## Bem Vindo
 
-Essa aplicação foi feita para ser avaliado no desafio do link → https://github.com/HausennTechnologies/hausenn-mobile-challenge
+Essa aplicação foi feita no intuito de fazer uma lista de contatos similar a dos celulares
 
 ### Funcionalidades
 
