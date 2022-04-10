@@ -19,22 +19,17 @@ export class StorageService {
     })
   }
 
-  async getAll(){
+  async getAllContatos(){
     let listaContatos = []
     let keysToSearch = []
-    let listKeys = []
-    let keys = await Storage.keys()
-    listKeys.push(keys)
-    listKeys.forEach( list =>{
-      keysToSearch.push(list)
-    })
+    keysToSearch.push(await Storage.keys())
 
     for(let i = 0; i <  keysToSearch[0].keys.length; i++){
-
       let key = keysToSearch[0].keys[i]
-      const contatos  = await Storage.get({key: key})
-      listaContatos.push(JSON.parse(contatos.value))
+      let contato  = await Storage.get({key: key})
+      listaContatos.push(JSON.parse(contato.value))
     }
+
     return listaContatos
 
   }

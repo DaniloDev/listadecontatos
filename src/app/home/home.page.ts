@@ -23,7 +23,7 @@ export class HomePage {
   ) {this.listarContatos()}
 
   async listarContatos(){
-    this.contato = await this._storageService.getAll()
+    this.contato = await this._storageService.getAllContatos()
   }
 
   ionViewDidEnter(){

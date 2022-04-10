@@ -28,7 +28,7 @@ export class ContatoCardComponent {
   }
 
   async listarContatos(){
-    this.contato = await this._storageService.getAll()
+    this.contato = await this._storageService.getAllContatos()
   }
 
   async DeleteContato(id: string){
