@@ -8,6 +8,7 @@ import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera
 import { Directory, Filesystem } from '@capacitor/filesystem'
 import { ModalController, Platform } from '@ionic/angular';
 import { ValidationService } from '../services/validation.service';
+import { Util } from 'src/utils/functions';
 
 const IMAGE_DIR = 'stored-images'
 
@@ -23,30 +24,7 @@ export class CadastroPage implements OnInit {
   formCadastro: FormGroup
   contato: Contato = new Contato()
 
-  mensagens = {
-    nome: [
-      { tipo: 'required', mensagem: 'O campo nome é obrigatório'},
-      { tipo: 'minlength', mensagem: 'O campo nome é deve ter pelo menos 3 caracteres'},
-      { tipo: 'maxlength', mensagem: 'O campo nome é deve ter no máximo 10 caracteres'}
-    ],
-    sobreNome: [
-      { tipo: 'minlength', mensagem: 'O campo nome é deve ter pelo menos 3 caracteres'},
-      { tipo: 'maxlength', mensagem: 'O campo nome é deve ter no máximo 22 caracteres'}
-    ],
-    email: [
-      { tipo: 'email', mensagem: 'Email Inválido'}
-    ],
-    telefone: [
-      { tipo: 'required', mensagem: 'O campo telefone é obrigatório'},
-      { tipo: 'maxlength', mensagem: 'O campo nome é deve ter no máximo 15 caracteres'},
-      { tipo: 'invalidPhone', mensagem: 'Informe um número de telefone válido!'}
-
-    ],
-    anotacao: [
-      { tipo: 'minlength', mensagem: 'O campo nome é deve ter pelo menos 3 caracteres'},
-      { tipo: 'maxlength', mensagem: 'O campo nome é deve ter no máximo 150 caracteres'}
-    ],
-  }
+  mensagens = Util.reqNovoContato()
 
   constructor(
     private _platform: Platform,
@@ -95,18 +73,7 @@ export class CadastroPage implements OnInit {
 
       this.photoPreview = image.webPath
 
-  }
- gerarId(len) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < len; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() *
- charactersLength));
-   }
-   return result;
-}
-
+  }s
 
 async readAsBase64(photo: Photo){
   if(this._platform.is('hybrid')){
@@ -143,7 +110,7 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
      })
 
     if(this.formCadastro.valid){
-      this.contato.id = this.gerarId(4)
+      this.contato.id = Util.gerarId(4)
       this.contato.photo = base64Data
       this.contato.nome = this.formCadastro.value.nome
       this.contato.sobreNome = this.formCadastro.value.sobreNome
