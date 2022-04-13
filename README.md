@@ -31,13 +31,13 @@ Essa aplicação foi feita no intuito de fazer uma lista de contatos similar a d
   <th>Gif4</th>
 </tr>
 <tr>
-<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif1.gif?raw=true" height="650" width="1060" style="max-width:100%;">
+<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif1.gif?raw=true" height="500" width="250" style="max-width:100%;">
 </td>
-<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif2.gif?raw=true" height="650" width="1060" style="max-width:100%;">
+<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif2.gif?raw=true" height="500" width="250" style="max-width:100%;">
 </td>
-<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif3.gif?raw=true" height="650" width="1060" style="max-width:100%;">
+<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif3.gif?raw=true" height="500" width="250" style="max-width:100%;">
 </td>
-<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif4.gif?raw=true" height="650" width="1060" style="max-width:100%;">
+<td><img src="https://raw.githubusercontent.com/DaniloDev/listadecontatos/main/src/assets/imgs/gif4.gif?raw=true" height="500" width="250" style="max-width:100%;">
 </td>
 
 </tr>
