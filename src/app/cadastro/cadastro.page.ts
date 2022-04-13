@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Contato } from '../models/Contato';
 import { StorageService } from '../services/storage.service';
 import { ProfilePhotoOptionComponent } from '../../components/contato-photo/contato-photo';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Directory, Filesystem } from '@capacitor/filesystem'
 import { ModalController, Platform } from '@ionic/angular';
 import { ValidationService } from '../services/validation.service';
@@ -61,7 +61,7 @@ export class CadastroPage implements OnInit {
     return await modal.present();
   }
 
-  async takePicture(type) {
+  async takePicture(type: any) {
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: false,
@@ -73,35 +73,12 @@ export class CadastroPage implements OnInit {
 
       this.photoPreview = image.webPath
 
-  }s
-
-async readAsBase64(photo: Photo){
-  if(this._platform.is('hybrid')){
-    const file = await Filesystem.readFile({
-      path: photo.path
-    })
-    return file.data
   }
-  else {
-    const response = await fetch(photo.webPath)
-    const blob = await response.blob()
-
-    return await this.convertBlobToBase64(blob) as string
-  }
-}
-
-
-convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
-  const reader = new FileReader
-  reader.onerror = reject
-  reader.onload = () => {
-    resolve(reader.result)
-  }
-  reader.readAsDataURL(blob)
-})
 
   async addContato(){
-     const base64Data = await this.readAsBase64(this.photo)
+     let util = new Util(this._platform)
+     const base64Data = await util.readAsBase64(this.photo)
+
      const fileName = new Date().getTime() + '.jpeg'
      const savedFile = await Filesystem.writeFile({
      directory: Directory.Data,

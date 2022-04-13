@@ -1,7 +1,16 @@
+import { Photo } from '@capacitor/camera';
+import { Filesystem } from '@capacitor/filesystem'
+import { Platform } from '@ionic/angular';
+
 export class Util {
 
 
-  static gerarId(len) {
+  constructor(private _platform: Platform){}
+
+  /**
+   Gera Id com numero de caracteres entre numeros e letras que passar pra ele
+ */
+  static gerarId(len: any) {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
@@ -11,11 +20,11 @@ export class Util {
    }
    return result;
 }
-/**
- Requisitos para cadastrar novo contato
- */
 
-static reqNovoContato() {
+/**
+  Requisitos para cadastrar novo contato
+*/
+static reqNovoContato(): any {
         return  {
             nome: [
               { tipo: 'required', mensagem: 'O campo nome é obrigatório'},
@@ -43,6 +52,32 @@ static reqNovoContato() {
 
 
   }
+
+
+async readAsBase64(photo: Photo){
+    if(this._platform.is('hybrid')){
+      const file = await Filesystem.readFile({
+        path: photo.path
+      })
+      return file.data
+    }
+    else {
+      const response = await fetch(photo.webPath)
+      const blob = await response.blob()
+
+      return await this.convertBlobToBase64(blob) as string
+    }
+  }
+
+
+ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
+    const reader = new FileReader
+    reader.onerror = reject
+    reader.onload = () => {
+      resolve(reader.result)
+    }
+    reader.readAsDataURL(blob)
+  })
 
 
 }
